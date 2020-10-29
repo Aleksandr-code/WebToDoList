@@ -27,7 +27,7 @@
   <div class="row">
     <div class="col-md-8 order-md-1">
       <h4 class="mb-3">Задачи</h4>
-      <form class="needs-validation" novalidate>
+      <form class="needs-validation" method="post" novalidate>
         <div class="mb-3">
           <label for="categoryNameList">Категория</label>
           <select class="custom-select" id="categoryNameList">
@@ -40,7 +40,7 @@
         <div class="row">
           <div class="col-md-8 mb-3">
             <label for="taskName">Название задачи</label>
-            <input type="text" class="form-control" id="taskName" placeholder="" value="" required>
+            <input type="text" class="form-control" id="taskName" placeholder="" name="name" value="{{#testTask.name}}{{testTask.name}}{{/testTask.name}}" required>
           </div>
         </div>
 
@@ -52,7 +52,7 @@
             <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
             <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
           </div>
-          <input type="hidden" id="dateStart" value="" />
+          <input type="hidden" id="dateStart" name="dateStart" value="{{#testTask.dateStart}}{{testTask.dateStart}}{{/testTask.dateStart}}" />
         </div>
         <div class="mb-3">
           <label for="dateEnd">Дата завершения</label>
@@ -62,7 +62,7 @@
             <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
             <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
           </div>
-          <input type="hidden" id="dateEnd" value="" />
+          <input type="hidden" id="dateEnd" name="dateEnd" value="{{#testTask.dateEnd}}{{testTask.dateEnd}}{{/testTask.dateEnd}}" />
         </div>
 
 

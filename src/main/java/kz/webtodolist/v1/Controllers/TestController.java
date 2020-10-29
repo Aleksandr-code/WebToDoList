@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping(path="/demo")
-public class MainController {
+public class TestController {
     @Autowired
     private UserRepository userRepository;
 

@@ -29,6 +29,22 @@ public class TasksController {
         return "redirect:/";
     }
 
+    //editTask
+    @GetMapping("task/update/{id}")
+    public String updateTask(Model model, @PathVariable("id") Integer id) {
+        Task newTask = taskRepository.findById(id).get();
+        model.addAttribute("testTask", newTask);
+        //model.addAttribute("isUpdate", true);
+        return "task";
+    }
+
+    //deleteTask
+    @GetMapping("task/delete/{id}")
+    public String deleteTask(@PathVariable("id") Integer id) {
+        taskRepository.deleteById(id);
+        return "redirect:/";
+    }
+
     //getTask
     @GetMapping("/test")
     public String index(Model model) {

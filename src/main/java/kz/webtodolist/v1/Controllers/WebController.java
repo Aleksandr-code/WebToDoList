@@ -24,7 +24,10 @@ public class WebController {
         model.addAttribute("tasks",tasks);
 
         Iterable<Category> categories = categoryRepository.findAll();
+        Integer countCategory = Math.toIntExact(categoryRepository.count());
         model.addAttribute("categories", categories);
+        model.addAttribute("countCategory",countCategory);
+
         return "index";
     }
 
@@ -40,11 +43,11 @@ public class WebController {
         return "register";
     }
 
-    @GetMapping("/category")
+    /*@GetMapping("/category")
     public String category(Model model) {
         model.addAttribute("", "");
         return "category";
-    }
+    }*/
 
     /*@GetMapping("/task")
     public String task(Model model) {

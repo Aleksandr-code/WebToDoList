@@ -31,11 +31,18 @@ public class TasksController {
 
     //editTask
     @GetMapping("task/update/{id}")
-    public String updateTask(Model model, @PathVariable("id") Integer id) {
+    public String updateTaskPage(Model model, @PathVariable("id") Integer id) {
         Task newTask = taskRepository.findById(id).get();
         model.addAttribute("testTask", newTask);
         //model.addAttribute("isUpdate", true);
         return "task";
+    }
+    @PostMapping("task/update/{id}")
+    public String updateTask(@ModelAttribute("testTask") Task newTask, @PathVariable("id") Integer id) {
+        Task updateTask = taskRepository.findById(id).get();
+        updateTask.setName(newTask.getName());
+        taskRepository.save(updateTask);
+        return "redirect:/";
     }
 
     //deleteTask

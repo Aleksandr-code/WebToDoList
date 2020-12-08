@@ -5,6 +5,7 @@ import kz.webtodolist.v1.Repositories.CategoryRepository;
 import kz.webtodolist.v1.Repositories.TaskRepository;
 import kz.webtodolist.v1.Task;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
